@@ -12,6 +12,15 @@
 @font-face{font-family:"Heuristica";src:url("fonts/heuristica-bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:"Playfair Display";src:url("fonts/playfair-display-variable.woff2") format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
 @font-face{font-family:"Playfair Display";src:url("fonts/playfair-display-italic-variable.woff2") format("woff2");font-weight:400 900;font-style:italic;font-display:swap}
+/* Cygre (brand paragraph face, by RandomMaerks) is a licensed font: it is used when installed on the device, and the
+   licensed web files can be added as fonts/cygre-light.woff2 and fonts/cygre-book.woff2 (see the commented rules). Manrope stands in until then. */
+@font-face{font-family:"Cygre";src:local("Cygre Light"),local("Cygre-Light");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Cygre";src:local("Cygre Book"),local("Cygre-Book");font-weight:350;font-style:normal;font-display:swap}
+@font-face{font-family:"Cygre";src:local("Cygre Medium"),local("Cygre-Medium");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Cygre";src:local("Cygre SemiBold"),local("Cygre-SemiBold");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Cygre";src:local("Cygre Bold"),local("Cygre-Bold");font-weight:700;font-style:normal;font-display:swap}
+/* @font-face{font-family:"Cygre";src:url("fonts/cygre-light.woff2") format("woff2");font-weight:300;font-display:swap}
+   @font-face{font-family:"Cygre";src:url("fonts/cygre-book.woff2") format("woff2");font-weight:350;font-display:swap} */
 @font-face{font-family:"Manrope";src:url("fonts/manrope-variable.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
 
 :root{
@@ -42,7 +51,7 @@
   --focus:#383D2A;
 
   /* type */
-  --serif:Heuristica, Utopia, Georgia, "Times New Roman", serif;
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
   --display:"Playfair Display", Georgia, "Times New Roman", serif;
   --sans:Cygre, Manrope, system-ui, -apple-system, "Segoe UI", sans-serif;
   --fs-hero:clamp(46px, 6.4vw, 92px);
@@ -71,7 +80,7 @@
 /* ---------- base ---------- */
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--header-h) + 16px + env(safe-area-inset-top,0px))}
-body{margin:0;background:var(--surface);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-variant-numeric:lining-nums}
+body{margin:0;background:var(--surface);color:var(--ink);font:350 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-variant-numeric:lining-nums}
 img{display:block;max-width:100%;height:auto}
 h1,h2,h3,h4,p,ul,ol,dl,dd,figure,blockquote,address{margin:0}
 ul,ol{padding:0;list-style:none}
@@ -729,3 +738,74 @@ button.pill{background:transparent;cursor:pointer}
 .peek__title{font:700 clamp(30px,3vw,42px)/1.05 var(--serif)}
 .peek__text{font-size:15.5px;line-height:1.5;opacity:.92}
 .peek .link-caps{margin-top:4px;color:#FFFBE5}
+.foot-bottom span>a{text-decoration:underline;text-underline-offset:3px}
+
+/* ================= brand typography: Playfair Display capitals for headlines, Playfair italic lower case
+   for sub headlines, Cygre Light/Book for running text ================= */
+h1,h2{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.005em;line-height:1}
+h3,h4{font-family:var(--display);font-weight:600}
+.lockup__upper{font-weight:400}
+.lockup__lower,.spooky__lower,.menu-lockup__lower,.lockup__lower *{text-transform:none;letter-spacing:0}
+.cafe-title,.peek__title,.room-card .lockup__upper{font-family:var(--display);font-weight:400;text-transform:uppercase}
+.hero-x h1{font-size:clamp(44px,6.2vw,92px);line-height:.96;letter-spacing:0}
+.page-hero h1{font-size:clamp(42px,5.4vw,78px)}
+.sec-head .lockup{font-size:clamp(32px,4vw,54px)}
+.hx-name,.pk-price,.mp-course,.room-facts dd{font-family:var(--display);font-weight:600}
+.brand-values summary{font-family:var(--display);font-weight:500}
+p,li,dd,address{font-weight:inherit}
+.lead,.sec-head__intro,.philosophy{font-weight:300}
+strong,b{font-weight:600}
+
+/* header: Promotions with its sub menu */
+.nav-group{position:relative;display:flex;align-items:center}
+.nav-parent{display:inline-flex;align-items:center;gap:7px;padding:10px 0 8px;border:0;border-bottom:1.5px solid transparent;border-radius:0;background:none;font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--ink-strong);cursor:pointer}
+.nav-parent:hover,.nav-parent[data-current]{border-bottom-color:var(--ink-strong)}
+.nav-parent svg{transition:transform .2s ease}
+.nav-sub{position:absolute;top:100%;left:-20px;z-index:60;display:none;flex-direction:column;min-width:280px;padding:8px 20px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 20px 44px rgba(29,29,29,.14)}
+.nav-sub::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+.nav-group:hover .nav-sub,.nav-group:focus-within .nav-sub,.nav-group.is-open .nav-sub{display:flex}
+.nav-group:hover .nav-parent svg,.nav-group.is-open .nav-parent svg{transform:rotate(180deg)}
+.site-nav .nav-sub a{padding:13px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+.site-nav .nav-sub a:last-child{border-bottom:0}
+.site-nav .nav-sub a:hover{color:var(--ink-brand);border-bottom-color:var(--line)}
+.site-nav .nav-sub a[aria-current]{text-decoration:underline;text-underline-offset:4px}
+.nav-sub a[hidden]{display:none}
+@media (max-width:1080px){
+  .nav-group{flex-direction:column;align-items:stretch}
+  .nav-parent{padding:15px 0;cursor:default;font-size:13.5px;background:linear-gradient(to right,var(--rule) 50%,transparent 0) 0 100%/4px 1px repeat-x}
+  .nav-parent:hover,.nav-parent[data-current]{border-bottom-color:transparent}
+  .nav-parent svg{display:none}
+  .nav-sub,.nav-group:hover .nav-sub{position:static;display:flex;min-width:0;padding:0 0 0 18px;border:0;border-radius:0;background:none;box-shadow:none}
+  .site-nav .nav-sub a{white-space:normal;border-bottom:0}
+}
+
+/* home promotions: three cards */
+.peek-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.peek__title{font-size:clamp(26px,2.4vw,34px)}
+
+/* Palma 30x30 Fuel Challenge */
+.fuel-band{padding-block:var(--sec-pad)}
+.fuel-band .sec-head__intro{color:rgba(255,251,229,.88)}
+.rw-track{position:relative;padding-top:8px}
+.rw-bar{position:relative;height:10px;margin:0 0 28px;border-radius:999px;background:linear-gradient(90deg,#F6D7C1 0,#F2A26B 40%,#E57D37 100%)}
+.rw-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.rw{display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px solid rgba(255,251,229,.3)}
+.rw-n{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#E57D37;color:#1D1D1D;font:700 19px/1 var(--sans)}
+.rw-t{font:400 clamp(22px,2vw,28px)/1.1 var(--display);text-transform:uppercase;color:#FFFBE5}
+.rw-d{font-size:15.5px;line-height:1.5;color:rgba(255,251,229,.88)}
+.fm-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px) clamp(32px,5vw,80px);align-items:start}
+.fm-sec h3{margin-bottom:6px;font:400 clamp(22px,2vw,28px)/1.1 var(--display);text-transform:uppercase;color:var(--ink-strong)}
+.fm-sec--box{padding:20px 24px;border:1.5px dashed var(--rule);border-radius:var(--radius-media)}
+.fm-item{padding-block:14px;border-bottom:1px solid var(--line)}
+.fm-item:last-child{border-bottom:0}
+.fm-top{display:flex;align-items:baseline;gap:10px}
+.fm-top h4{font:600 18px/1.25 var(--sans);color:var(--ink)}
+.fm-tag{padding:2px 8px;border:1px solid var(--line);border-radius:999px;font:600 10.5px/1.5 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-brand);white-space:nowrap}
+.fm-dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px)}
+.fm-price{font:600 18px/1 var(--sans);color:var(--ink-strong)}
+.fm-desc{margin-top:3px;font-style:italic;font-size:15px;color:var(--ink-meta)}
+.fm-macros{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:6px;font:600 12px/1.4 var(--sans);letter-spacing:.04em;color:#C8612A}
+.fm-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;margin-top:clamp(32px,4vw,48px);padding-top:24px;border-top:1px solid var(--line)}
+.fm-foot .note{max-width:60ch}
+@media (max-width:900px){.rw-list{grid-template-columns:repeat(2,minmax(0,1fr))}.fm-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.rw-list{grid-template-columns:minmax(0,1fr)}.rw-bar{display:none}}

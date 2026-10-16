@@ -42,10 +42,10 @@
 <meta name="twitter:description" content="All-day café in Dubai on Palm Jumeirah and Dubai Creek Harbour: slow breakfasts, stone-baked pizza, specialty coffee, matcha and smoothies. Open daily.">
 <meta name="twitter:image" content="https://cafedepalma.ae/assets/og/home.jpg">
 <meta name="twitter:image:alt" content="The dining room at Café de Palma Golden Mile, with hanging greenery, an olive tree and rattan chairs">
-<link rel="preload" href="/assets/fonts/heuristica-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/playfair-display-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/cdp.css?v=1d4d2835d2">
-<script defer src="/assets/cdp.js?v=1d4d2835d2"></script>
+<link rel="stylesheet" href="/assets/cdp.css?v=b73c605a7e">
+<script defer src="/assets/cdp.js?v=b73c605a7e"></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -120,8 +120,7 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <a href="#cafes">Our cafés</a>
       <a href="/menu/">Menu</a>
-      <a href="/halloween/" data-show-until="2026-10-31">Halloween</a>
-      <a href="/festive/">Festive</a>
+      <div class="nav-group"><button type="button" class="nav-parent" aria-expanded="false" aria-controls="nav-promos">Promotions<svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="m2 4 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><div class="nav-sub" id="nav-promos"><a href="/halloween/" data-show-until="2026-10-31">Halloween</a><a href="/fuel-challenge/" data-show-until="2026-11-29">Palma 30×30 Fuel Challenge</a><a href="/festive/">Festive season</a></div></div>
       <a href="/gatherings/">Gatherings</a>
       <a href="/our-story/">Our story</a>
       <a href="/contact/">Contact</a>
@@ -170,7 +169,7 @@
   <section class="sec sec--flush" id="cafes" aria-labelledby="cafes-h">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="lockup h2" id="cafes-h"><span class="lockup__upper">Our cafés</span><span class="lockup__lower">An atmosphere that invites.</span></h2>
+        <h2 class="lockup h2" id="cafes-h"><span class="lockup__upper">Our cafés</span><span class="lockup__lower">an atmosphere that invites.</span></h2>
       </div>
       <div class="cafes">
       <article class="cafe" id="golden-mile" aria-labelledby="cafe-golden-mile" data-reveal>
@@ -220,14 +219,14 @@
   </section>
 
 
-  <section class="sec sec--flush sec--rule" id="seasonal" aria-labelledby="seasonal-h" data-show-until="2026-12-31">
+  <section class="sec sec--flush sec--rule" id="promotions" aria-labelledby="seasonal-h" data-show-until="2026-12-31">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="lockup h2" id="seasonal-h"><span class="lockup__upper">Coming up</span><span class="lockup__lower">seasonal moments at Café de Palma.</span></h2>
+        <h2 class="lockup h2" id="seasonal-h"><span class="lockup__upper">Promotions</span><span class="lockup__lower">seasonal moments at Café de Palma.</span></h2>
       </div>
       <div class="peek-grid">
         <a class="peek" href="/halloween/" data-show-until="2026-10-31" data-reveal>
-          <img class="ph ph-fill" src="/img/cdp-kids-at-the-table.webp" srcset="/img/cdp-kids-at-the-table-720.webp 720w, /img/cdp-kids-at-the-table.webp 1258w" sizes="(max-width:900px) 100vw, 50vw" width="1258" height="709" alt="" loading="lazy" decoding="async" style="--pos:58% 50%">
+          <img class="ph ph-fill" src="/img/cdp-kids-at-the-table.webp" srcset="/img/cdp-kids-at-the-table-720.webp 720w, /img/cdp-kids-at-the-table.webp 1258w" sizes="(max-width:900px) 100vw, 33vw" width="1258" height="709" alt="" loading="lazy" decoding="async" style="--pos:58% 50%">
           <span class="peek__body">
             <span class="eyebrow">29 – 31 October · both cafés</span>
             <span class="peek__title">Halloween</span>
@@ -235,8 +234,17 @@
             <span class="link-caps">Discover Halloween</span>
           </span>
         </a>
+        <a class="peek" href="/fuel-challenge/" data-show-until="2026-11-29" data-reveal>
+          <img class="ph ph-fill" src="/img/cdp-collagen-smoothies.webp" srcset="/img/cdp-collagen-smoothies-720.webp 720w, /img/cdp-collagen-smoothies.webp 1400w" sizes="(max-width:900px) 100vw, 33vw" width="1400" height="992" alt="" loading="lazy" decoding="async" style="--pos:50% 45%">
+          <span class="peek__body">
+            <span class="eyebrow">31 October – 29 November · both cafés</span>
+            <span class="peek__title">Palma 30×30 Fuel Challenge</span>
+            <span class="peek__text">Order from our Fitness Menu, collect stamps and unlock rewards, up to AED 1000 on your Palma Rewards account.</span>
+            <span class="link-caps">Discover the challenge</span>
+          </span>
+        </a>
         <a class="peek" href="/festive/" data-reveal>
-          <img class="ph ph-fill" src="/img/cdp-creek-harbour-skyline-sunset.webp" srcset="/img/cdp-creek-harbour-skyline-sunset-640.webp 640w, /img/cdp-creek-harbour-skyline-sunset.webp 1100w" sizes="(max-width:900px) 100vw, 50vw" width="1100" height="1649" alt="" loading="lazy" decoding="async" style="--pos:50% 62%">
+          <img class="ph ph-fill" src="/img/cdp-creek-harbour-skyline-sunset.webp" srcset="/img/cdp-creek-harbour-skyline-sunset-640.webp 640w, /img/cdp-creek-harbour-skyline-sunset.webp 1100w" sizes="(max-width:900px) 100vw, 33vw" width="1100" height="1649" alt="" loading="lazy" decoding="async" style="--pos:50% 62%">
           <span class="peek__body">
             <span class="eyebrow">December · Creek Harbour</span>
             <span class="peek__title">Festive season</span>
@@ -337,7 +345,7 @@
         <img class="ph ph-fill" src="/img/cdp-flower-workshop.webp" width="1010" height="569" alt="Guests arranging flowers around a long table during a workshop in the private room" loading="lazy" decoding="async" style="--pos:50% 50%">
         <div class="room-card">
           <p class="eyebrow">Gatherings · Golden Mile – Palm Jumeirah</p>
-          <h2 class="lockup h2" id="gather-h"><span class="lockup__upper">The private room</span><span class="lockup__lower">Host your gatherings in style.</span></h2>
+          <h2 class="lockup h2" id="gather-h"><span class="lockup__upper">The private room</span><span class="lockup__lower">host your gatherings in style.</span></h2>
           <p>A cosy, elegant room for business breakfasts, creative workshops, family celebrations or a get-together with friends.</p>
           <dl class="room-facts">
             <div><dt>Guests</dt><dd>12 – 15</dd></div>
@@ -357,8 +365,7 @@
     <div class="wrap">
       <div class="story-grid">
         <div class="story-copy" data-reveal>
-          <img class="monogram" src="/assets/logo/cafe-de-palma-monogram-cream.svg" alt="" width="64" height="78" loading="lazy">
-          <h2 class="lockup h2" id="story-h"><span class="lockup__upper">Our story</span><span class="lockup__lower">A slower rhythm in a fast-paced city.</span></h2>
+          <h2 class="lockup h2" id="story-h"><span class="lockup__upper">Our story</span><span class="lockup__lower">a slower rhythm in a fast-paced city.</span></h2>
         </div>
         <div class="stack" data-reveal>
           <p class="philosophy">Café de Palma is a place for people. For those who value a slower rhythm in a fast-paced city, honest natural food and a warm atmosphere. Here, life pauses — but never stops.</p>
@@ -441,11 +448,12 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; <span data-year>2026</span> Café de Palma, Dubai, UAE &middot; Managed by Creneau Hospitality</span>
+      <span>&copy; <span data-year>2026</span> Café de Palma, Dubai, UAE &middot; Managed by <a href="https://www.creneauhospitality.com/" target="_blank" rel="noopener">Creneau Hospitality<span class="sr-only"> (opens in a new tab)</span></a></span>
       <nav aria-label="Footer">
         <a href="/#cafes">Our cafés</a>
         <a href="/menu/">Menu</a>
         <a href="/halloween/" data-show-until="2026-10-31">Halloween</a>
+        <a href="/fuel-challenge/" data-show-until="2026-11-29">Fuel Challenge</a>
         <a href="/festive/">Festive</a>
         <a href="/gatherings/">Gatherings</a>
         <a href="/our-story/">Our story</a>

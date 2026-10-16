@@ -357,6 +357,23 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
   }
 
+  /* ---------- Promotions sub menu: opens on hover or focus, and on click for touch screens ---------- */
+  each(document.querySelectorAll('.nav-group'), function (g) {
+    var btn = g.querySelector('.nav-parent');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var open = !g.classList.contains('is-open');
+      g.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', function (e) {
+      if (!g.contains(e.target)) { g.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    g.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { g.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+    });
+  });
+
   /* ---------- booking: pick a café, then WhatsApp with the message already written ---------- */
   var dialog = document.getElementById('book-dialog');
   function waBookLink(id, topic) {
