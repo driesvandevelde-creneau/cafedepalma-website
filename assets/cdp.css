@@ -809,3 +809,21 @@ strong,b{font-weight:600}
 .fm-foot .note{max-width:60ch}
 @media (max-width:900px){.rw-list{grid-template-columns:repeat(2,minmax(0,1fr))}.fm-grid{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:520px){.rw-list{grid-template-columns:minmax(0,1fr)}.rw-bar{display:none}}
+/* festive menus */
+.fx-menu{gap:6px}
+.fx-course{padding-top:18px}
+.fx-head{display:flex;align-items:baseline;gap:10px;padding-bottom:8px;border-bottom:1px solid var(--line);font:400 18px/1.2 var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--ink-strong)}
+.fx-head em{font-size:15px;text-transform:none;letter-spacing:0;color:var(--ink-brand)}
+.fx-menu ul{margin-top:0}
+.fx-menu li{display:flex;flex-direction:column;gap:2px;align-items:stretch;padding-block:11px;border-bottom:1px dotted var(--line)}
+.fx-menu li:last-child{border-bottom:0}
+.fx-name{font:600 16.5px/1.3 var(--sans);color:var(--ink)}
+.fx-desc{font-style:italic;font-size:14.5px;line-height:1.45;color:var(--ink-meta)}
+/* festive menus as pop-ups */
+dialog.fx-dialog{width:min(640px,calc(100vw - 24px));max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:var(--radius-media);background:var(--surface-2);color:var(--ink);overflow:auto;overscroll-behavior:contain}
+dialog.fx-dialog::backdrop{background:rgba(29,29,29,.6)}
+dialog.fx-dialog .fx-menu{position:relative;border:0;border-radius:0}
+.fx-close{position:absolute;top:16px;right:16px}
+.fx-note{margin-top:16px}
+.fx-menu .actions{margin-top:6px}
+.fest .actions .btn-line{order:0}

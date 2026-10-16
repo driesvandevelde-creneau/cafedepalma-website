@@ -595,6 +595,17 @@
     });
   });
 
+  /* ---------- pop-up menus (festive): [data-open-dialog="id"] opens that dialog ---------- */
+  each(document.querySelectorAll('[data-open-dialog]'), function (b) {
+    var d = document.getElementById(b.getAttribute('data-open-dialog'));
+    if (!d || typeof d.showModal !== 'function') return;
+    b.addEventListener('click', function () { d.showModal(); });
+    d.addEventListener('click', function (e) {
+      if (e.target === d || (e.target.closest && e.target.closest('[data-close-dialog]'))) d.close();
+    });
+    d.addEventListener('close', function () { try { b.focus({ preventScroll: true }); } catch (err) { b.focus(); } });
+  });
+
   /* ---------- small things ---------- */
   each(document.querySelectorAll('[data-year]'), function (el) { el.textContent = String(new Date().getFullYear()); });
 
